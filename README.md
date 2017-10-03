@@ -1,6 +1,6 @@
 Python - October 2017
 ====================
-I :heart: Python!!
+I :snake: Python!!
 
 # Setup
  1. Fork this repo to your github account.
