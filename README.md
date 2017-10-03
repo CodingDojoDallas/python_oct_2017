@@ -23,6 +23,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 
 # Resources
+[Eli Byers Cheat Sheets](https://github.com/eli-byers/Cheat_Sheets)<br>
 [Python Language Documentation](https://docs.python.org/2/reference/index.html) <br>
 
 
