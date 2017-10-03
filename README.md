@@ -41,3 +41,5 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 **12-1pm** - Lunch
 
 **2pm** - Afternoon lecture/activities
+
+**5pm** - Afternoon checkin
