@@ -24,8 +24,9 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Resources
 [Eli Byers Cheat Sheets](https://github.com/eli-byers/Cheat_Sheets)<br>
+[Neural Network](https://medium.com/technology-invention-and-more/how-to-build-a-simple-neural-network-in-9-lines-of-python-code-cc8f23647ca1)
 [Python Language Documentation](https://docs.python.org/2/reference/index.html) <br>
-
+[Python Exceptions](https://docs.python.org/2/library/exceptions.html)<br>
 
 # Schedule
 
