@@ -27,8 +27,8 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Neural Network](https://medium.com/technology-invention-and-more/how-to-build-a-simple-neural-network-in-9-lines-of-python-code-cc8f23647ca1)<br>
 [Python Language Documentation](https://docs.python.org/2/reference/index.html) <br>
 [Python Exceptions](https://docs.python.org/2/library/exceptions.html)<br>
-[Decorators](https://wiki.python.org/moin/PythonDecorators)
-[pygame](https://www.pygame.org/)
+[Decorators](https://wiki.python.org/moin/PythonDecorators)<br>
+[pygame](https://www.pygame.org/)<br>
 
 # Schedule
 
