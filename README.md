@@ -20,7 +20,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Videos
 [Tuples](https://youtu.be/4gZ9j7Sa41A)<br>
-[Lists & Dicts]() \- [listsDicts.py](listsDicts.py)<br>
+[Lists & Dicts]() \- [listsDict.py](files/listsDict.py)<br>
 [OOP Demo](https://youtu.be/jPTmGJghqqU)
 
 
