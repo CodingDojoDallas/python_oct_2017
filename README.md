@@ -19,7 +19,9 @@ Please commit daily. That way we can provide you with feedback :) or just a thum
 https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Videos
-[Tuples](https://youtu.be/4gZ9j7Sa41A)
+[Tuples](https://youtu.be/4gZ9j7Sa41A)<br>
+[Lists & Dicts]() \- [listsDicts.py](listsDicts.py)<br>
+[OOP Demo](https://youtu.be/jPTmGJghqqU)
 
 
 # Resources
