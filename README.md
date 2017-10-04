@@ -19,12 +19,18 @@ Please commit daily. That way we can provide you with feedback :) or just a thum
 https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Videos
-[Tuples](https://youtu.be/4gZ9j7Sa41A)
+[Tuples](https://youtu.be/4gZ9j7Sa41A)<br>
+[Lists & Dicts]() \- [listsDicts.py](listsDicts.py)<br>
+[OOP Demo](https://youtu.be/jPTmGJghqqU)
 
 
 # Resources
+[Eli Byers Cheat Sheets](https://github.com/eli-byers/Cheat_Sheets)<br>
+[Neural Network](https://medium.com/technology-invention-and-more/how-to-build-a-simple-neural-network-in-9-lines-of-python-code-cc8f23647ca1)<br>
 [Python Language Documentation](https://docs.python.org/2/reference/index.html) <br>
-
+[Python Exceptions](https://docs.python.org/2/library/exceptions.html)<br>
+[Decorators](https://wiki.python.org/moin/PythonDecorators)<br>
+[pygame](https://www.pygame.org/)<br>
 
 # Schedule
 
@@ -41,3 +47,5 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 **12-1pm** - Lunch
 
 **2pm** - Afternoon lecture/activities
+
+**5pm** - Afternoon checkin
