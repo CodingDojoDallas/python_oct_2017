@@ -14,6 +14,9 @@ class Call(object):
         global idcounter
         idcounter += 1
     
+    def __repr__(self):
+        return "<Call object - {} - {}>".format(self.name, self.phone_number)
+    
     def display(self):
         print "Returning call info..."
         print "**********************"
@@ -24,18 +27,16 @@ class Call(object):
         print "Reason for Call:", self.reason
         return self
 
-first = Call(idcounter, "Stephen Weil", "770-789-7038", 13.55, "Complaints")
-first.display()
-second = Call(idcounter, "Joe Shmoe", "888-888-4444", 14.15, "Just wanted someone to talk to")
-second.display()
-third = Call(idcounter, "Jane Doe", "555-555-5555", 14.28, "Returns")
-fourth = Call(idcounter, "Some Name", "111-222-333", 12.30, "To Argue")
+
 
 class CallCenter(object):
 
     def __init__(self):
         self.calls = []
         self.queue_size = 0
+    
+    def __repr__(self):
+        return "<CallCenter object - Queue Size: {}>".format(self.queue_size)
     
     def add_call(self, call):
         self.calls.append(call)
@@ -69,9 +70,18 @@ class CallCenter(object):
             print "Caller Phone Number: ", call.phone_number
         return self
 
-call_center = CallCenter()
-call_center.add_call(first).add_call(second).add_call(third).info()
-call_center.remove_specific("888-888-4444").info()
-call_center.remove_call().info()
-call_center.add_call(fourth).info().sort().info()
+if __name__ == "__main__":
+    
+    first = Call(idcounter, "Stephen Weil", "770-789-7038", 13.55, "Complaints")
+    first.display()
+    second = Call(idcounter, "Joe Shmoe", "888-888-4444", 14.15, "Just wanted someone to talk to")
+    second.display()
+    third = Call(idcounter, "Jane Doe", "555-555-5555", 14.28, "Returns")
+    fourth = Call(idcounter, "Some Name", "111-222-333", 12.30, "To Argue")
+
+    call_center = CallCenter()
+    call_center.add_call(first).add_call(second).add_call(third).info()
+    call_center.remove_specific("888-888-4444").info()
+    call_center.remove_call().info()
+    call_center.add_call(fourth).info().sort().info()
 

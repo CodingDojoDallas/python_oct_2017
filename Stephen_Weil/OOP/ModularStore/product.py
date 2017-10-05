@@ -8,6 +8,9 @@ class Product(object):
         self.cost = cost
         self.status = "for sale"
     
+    def __repr__(self):
+        return "<Product object - {}>".format(self.name)
+
     def sell(self):
         self.status = "sold"
         return self
@@ -37,12 +40,13 @@ class Product(object):
         print "Status: ", self.status
         return self
 
-iphone = Product("iPhone", 800, .5, "Apple", 400)
-print "Price with tax: $" + str(iphone.add_tax(.1))
-iphone.display_info().sell().display_info().take_back('defective').display_info()
-samsung = Product("Galaxy S7", 500, .5, "Samsung", 250)
-print "Price with tax: $" + str(samsung.add_tax(.1))
-samsung.display_info().sell().display_info().take_back('used').display_info()
-nokia = Product("Old School Flip Phone", 50, 1, "Nokia", 10)
-print "Price with tax: $" + str(nokia.add_tax(.1))
-nokia.display_info().sell().display_info().take_back('new').display_info()
+if __name__ == "__main__":
+    iphone = Product("iPhone", 800, .5, "Apple", 400)
+    print "Price with tax: $" + str(iphone.add_tax(.1))
+    iphone.display_info().sell().display_info().take_back('defective').display_info()
+    samsung = Product("Galaxy S7", 500, .5, "Samsung", 250)
+    print "Price with tax: $" + str(samsung.add_tax(.1))
+    samsung.display_info().sell().display_info().take_back('used').display_info()
+    nokia = Product("Old School Flip Phone", 50, 1, "Nokia", 10)
+    print "Price with tax: $" + str(nokia.add_tax(.1))
+    nokia.display_info().sell().display_info().take_back('new').display_info()

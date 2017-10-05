@@ -11,6 +11,9 @@ class Patient(object):
         self.allergies = allergies
         self.bed_num = bed_num
     
+    def __repr__(self):
+        return "<Patient object - {}>".format(self.name)
+    
 class Hospital(object):
 
     def __init__(self, name, capacity, patients=[]):
@@ -21,6 +24,9 @@ class Hospital(object):
         self.open_beds = []
         for i in range (1, self.capacity+1):
             self.open_beds.append(i)
+    
+    def __repr__(self):
+        return "<Hospital object - {}>".format(self.name)
     
     def admit(self, patient):
         if len(self.patients) + 1 > self.capacity:
@@ -52,11 +58,12 @@ class Hospital(object):
             print "*******************"
         return self
 
-bob = Patient(idcounter, "Bob", ["Penicilin", "Latex"])
-jane = Patient(idcounter, "Jane")
-timmy = Patient(idcounter, "Timmy", ["Ibuprofen"])
-jackie = Patient(idcounter, "Jackie")
+if __name__ == "__main__":
+    bob = Patient(idcounter, "Bob", ["Penicilin", "Latex"])
+    jane = Patient(idcounter, "Jane")
+    timmy = Patient(idcounter, "Timmy", ["Ibuprofen"])
+    jackie = Patient(idcounter, "Jackie")
 
-hospital = Hospital("St. John's", 3)
+    hospital = Hospital("St. John's", 3)
 
-hospital.admit(bob).admit(jane).admit(timmy).admit(jackie).display_info().discharge(bob).display_info().admit(jackie).display_info()
+    hospital.admit(bob).admit(jane).admit(timmy).admit(jackie).display_info().discharge(bob).display_info().admit(jackie).display_info()
