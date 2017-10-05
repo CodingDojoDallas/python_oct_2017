@@ -22,6 +22,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Tuples](https://youtu.be/4gZ9j7Sa41A)<br>
 [Lists & Dicts](https://youtu.be/O6rBIfDa2mE) \- [listsDict.py](files/listDict.py)<br>
 [OOP Demo](https://youtu.be/jPTmGJghqqU) \- [oop.py](files/oop.py)<br>
+[Venv & Flask](https://youtu.be/HPMYjfq55uU)<br>
 
 
 # Resources
