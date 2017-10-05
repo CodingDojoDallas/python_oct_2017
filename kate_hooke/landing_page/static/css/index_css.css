@@ -1,0 +1,18 @@
+* {
+	margin: 0px;
+	border: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 1000px;
+    height: 2000px;
+    background: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+h1{
+    color: white;
+}
+h2{
+    color: rgba(196, 30, 30, 0.75);
+}
