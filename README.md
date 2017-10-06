@@ -32,6 +32,9 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Exceptions](https://docs.python.org/2/library/exceptions.html)<br>
 [Decorators](https://wiki.python.org/moin/PythonDecorators)<br>
 [pygame](https://www.pygame.org/)<br>
+[Jinja2 Docs](http://jinja.pocoo.org/docs/2.9/)<br>
+[Flask Docs](http://flask.pocoo.org/docs/0.12/)<br>
+
 
 # Schedule
 
@@ -41,7 +44,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 **9:50am** - Algo presentations
 
-**10:00am** - Mouring checkin
+**10:00am** - Morning checkin
 
 **10:30am** - Morning lecture/activities
 
