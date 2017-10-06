@@ -24,7 +24,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [OOP Demo](https://youtu.be/jPTmGJghqqU) \- [oop.py](files/oop.py)<br>
 [Venv & Flask](https://youtu.be/HPMYjfq55uU)<br>
 [Flask Request Cycle](https://youtu.be/BN8-QE1xOrQ)<br>
-[Session](https://youtu.be/69cjBorGHV4) -\ [Session, Inputs & Validation](https://youtu.be/fPW86BvngsM)
+[Session](https://youtu.be/69cjBorGHV4) \- [Session, Inputs & Validation](https://youtu.be/fPW86BvngsM)
 
 
 # Resources
