@@ -1,0 +1,5 @@
+>   After second pip install Django command is entered a most recent call last list is shown
+    and it tell me that "requirement already satisfied"
+>   pip list gives installed packages, including editables and pip freeze gives installed packages in requirements format
+>   ls after running command: pip freeze > requirements.txt shows me a new file on my desktop named requirements.txt
+>   pip search will search for all packages whose name or summary contains the search query
