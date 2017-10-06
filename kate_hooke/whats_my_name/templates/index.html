@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Become a Ninja</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index_css.css')}}">
+    </head>
+    <body>
+        <div id = "wrapper"> <!-- Start Wrapper -->
+            <h1>WANT TO BE A NINJA?</h1><br>
+            <h2>Register Here:</h2><br>
+            <form action='/process' method='post'>
+                Dojo City: <input type='text' name='dojo'>
+                <br><br>
+                Your Name: <input type='text' name='name'>
+                <br><br>
+                Your Email:  <input type='text' name='email'>
+                <br><br><br>
+                <input type='submit' value='Make me a Ninja.'>
+            </form>
+        </div> <!-- End Wrapper -->
+    </body>
+</html>
