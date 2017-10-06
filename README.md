@@ -19,7 +19,11 @@ Please commit daily. That way we can provide you with feedback :) or just a thum
 https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Videos
-[Tuples](https://youtu.be/4gZ9j7Sa41A)
+[Tuples](https://youtu.be/4gZ9j7Sa41A)<br>
+[Lists & Dicts](https://youtu.be/O6rBIfDa2mE) \- [listsDict.py](files/listDict.py)<br>
+[OOP Demo](https://youtu.be/jPTmGJghqqU) \- [oop.py](files/oop.py)<br>
+[Venv & Flask](https://youtu.be/HPMYjfq55uU)<br>
+[Flask Request Cycle](https://youtu.be/BN8-QE1xOrQ)<br>
 
 
 # Resources
@@ -29,6 +33,9 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Exceptions](https://docs.python.org/2/library/exceptions.html)<br>
 [Decorators](https://wiki.python.org/moin/PythonDecorators)<br>
 [pygame](https://www.pygame.org/)<br>
+[Jinja2 Docs](http://jinja.pocoo.org/docs/2.9/)<br>
+[Flask Docs](http://flask.pocoo.org/docs/0.12/)<br>
+
 
 # Schedule
 
@@ -38,7 +45,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 **9:50am** - Algo presentations
 
-**10:00am** - Mouring checkin
+**10:00am** - Morning checkin
 
 **10:30am** - Morning lecture/activities
 
