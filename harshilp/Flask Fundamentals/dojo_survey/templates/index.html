@@ -21,14 +21,22 @@
             <label>
                 Favorite Language: 
                 <select name="favorite_language">
-                    <option value="javascript">Javascript</option>
-                    <option value="python">Python</option>
-                    <option value="ruby">Ruby</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Java">Java</option>
                 </select>
             </label>
-            <p>Comment (If you please)</p>
+            <p>Comment</p>
             <textarea name="comment" cols="30"></textarea>
-            <input type='submit' value='Submit'>
+            <button type='submit' value='Submit'>Submit</button>
         </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
     </body>
 </html>

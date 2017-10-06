@@ -9,3 +9,16 @@ h3{
     color:blueviolet;
     font-size:36px;
 }
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+select{
+    display:block;
+}
+button{
+    display:block;
+    padding:5px;
+    margin-top:10px;
+}
