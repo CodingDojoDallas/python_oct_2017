@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Number Game</title>
+    <style>
+        h1, p, form{
+            text-align: center;
+        }
+        input{
+            display: block;
+            margin: auto;
+            width: 75px;
+        }
+        div{
+            width: 125px;
+            height: 125px;
+            margin: 0 auto 20px;
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    {% if message %}
+        <div style="background-color: {{color}}">
+            <p>{{message}}</p>
+            {% if reset == "yes" %}
+                <form action="/reset" method="get">
+                    <input type="submit" name="submit" value="Play Again">
+                </form>
+            {% endif %}
+        </div>
+    {% endif %}
+    <form action="/guess" method="post">
+        <input type="number" name="guess">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+</html>

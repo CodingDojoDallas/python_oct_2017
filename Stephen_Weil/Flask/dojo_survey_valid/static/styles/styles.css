@@ -1,0 +1,19 @@
+label{
+    display: block;
+}
+input[type="submit"]{
+    display: block;
+}
+textarea{
+    height: 200px;
+    width: 400px;
+}
+div{
+    padding: 25px;
+    width: 450px;
+    height: 450px;
+    border: 1px solid black;
+}
+h1{
+    text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>{{ session['counter'] }} times.</p>
+    <form action="/plustwo" method="post">
+        <input type="submit" name="submit" value="+2">
+    </form>
+    <form action="/clear" method="post">
+        <input type="submit" name="submit" value="Reset">
+    </form>
+</body>
+</html>
