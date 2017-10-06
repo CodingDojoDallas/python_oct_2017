@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    padding:50px;
+}
+form{
+    display:inline-block;
+    width:200px;
+    height:200px;
+    border:2px black solid;
+    text-align:center;
+}
+h3{
+    margin-top:50px;
+}
+div{
+    display:block;
+    height:250px;
+}
+#log{
+    overflow-y: scroll;
+    height:200px;
+    width:800px;
+}
+img{
+    width:320px;
+    display:inline-block;
+    height:auto;
+    vertical-align:top;
+    margin-top:10px;
+}

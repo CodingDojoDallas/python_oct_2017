@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Number Game</title>
+    </head>
+    <body>
+        <h1>Welcome to the Number Game</h1>
+        {% if session['state'] == 'start' %}
+        <form action="/guess" method='post'>
+            <input type="text" name="guess">
+            <button type="submit">Guess</button>
+        </form>
+        {% endif %}
+        {% if session['state'] == 'low' %}
+        <h3>Too LOW! Aim higher next time...</h3>
+        <form action="/guess" method='post'>
+            <input type="text" name="guess">
+            <button type="submit">Guess</button>
+        </form>
+        {% endif %}
+        {% if session['state'] == 'high' %}
+        <h3>Too HIGH! Aim lower next time...</h3>
+        <form action="/guess" method='post'>
+            <input type="text" name="guess">
+            <button type="submit">Guess</button>
+        </form>
+        {% endif %}
+        {% if session['state'] == 'end' %}
+        <h2>{{session['ans']}} was the correct number! You win!</h2>
+        <form action="/again" method='post'>
+            <button type="submit">Play Again</button>
+        </form>
+        {% endif %}
+    </body>
+</html>
