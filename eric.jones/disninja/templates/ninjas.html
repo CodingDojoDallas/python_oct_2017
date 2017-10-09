@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Disappearing Ninjas">
+        <title>Disappearing Ninjas</title>
+    </head>
+    <body>
+    {% if display == "none": %}
+        <p>No ninjas here</p>
+    {% elif display == "all": %}
+        <p><img src="{{ url_for('static', filename='images/tmnt.png') }}"></p>
+    {% elif display == "blue": %}
+        <p><img src="{{ url_for('static', filename='images/leonardo.jpg') }}"></p>
+    {% elif display == "orange": %}
+        <p><img src="{{ url_for('static', filename='images/michelangelo.jpg') }}"></p>
+    {% elif display == "red": %}
+        <p><img src="{{ url_for('static', filename='images/raphael.jpg') }}"></p>
+    {% elif display == "purple": %}
+        <p><img src="{{ url_for('static', filename='images/donatello.jpg') }}"></p>
+    {% else: %}
+        <p><img src="{{ url_for('static', filename='images/notapril.jpg') }}"></p>
+    {% endif %}
+    </body>
+</html>
