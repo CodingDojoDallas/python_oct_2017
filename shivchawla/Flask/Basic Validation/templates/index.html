@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Basic Validation Example</title>
+</head>
+<body>
+    <h1>Enter a Valid(Any) Name!</h1>
+    {% with messages = get_flashed_messages() %} <!the with messages here help declare a variable in our template that we can use within a specific scope !>
+        {% if messages %} <!Check if there are any messages that came back from the get_flashed_messages() function !>
+            {% for message in messages %} <!loop through all messages !>
+                <p>{{message}}</p> <!print a message in a p tag if something was raw !>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action='/process' method='POST'>
+    Name:<input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

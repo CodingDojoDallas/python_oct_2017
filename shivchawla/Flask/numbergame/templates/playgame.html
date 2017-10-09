@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Number Game</title>
+    </head>
+    <body> 
+        <h1>Welcome to the great Number game!</h1>
+        <p>I am thinking of a number from 1-100</p>
+        <p>Guess it dude</p>
+        <h2>{% if session['guess'] == userguess %} GOOD {% elif session['guess'] > userguess %} TOO LOW {% elif session['guess'] < userguess %} TOO HIGH {%endif%}</h2>
+        <form action='/guess' method='post'>
+            <input type="text" name='guess' placeholder="guess here">
+            <input type="submit" value="guess">
+        </form>
+    </body>
+</html>

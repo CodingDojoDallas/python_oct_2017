@@ -1,0 +1,26 @@
+<html>
+    <head>
+       <title>Dojo Survey</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %} <!the with messages here help declare a variable in our template that we can use within a specific scope !>
+            {% if messages %} <!Check if there are any messages that came back from the get_flashed_messages() function !>
+                {% for message in messages %} <!loop through all messages !>
+                    <p>{{message}}</p> <!print a message in a p tag if something was raw !>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      <form action='/submit' method='post'>
+          Your Name: <input type="text" name='name'>
+          Favorite Language: <select name="language">
+              <option value = "python">Python</option>
+              </select>
+          Dojo Location: <select name="location">
+              <option value="SJ">SJ</option>
+              <option value="DFW">DFW</option>
+          </select>
+          Comment:<input type="text" name="comment">
+            <input type ="submit">
+      </form>
+    </body>
+</html>
