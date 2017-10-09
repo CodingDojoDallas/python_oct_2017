@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Result Page</title>
+	 <link rel="stylesheet" type="text/css" href="static/result.css">
+</head>
+<body>
+ <div class="wrapper">
+          <div class="top">
+              <p>Dojo Survey Index</p>
+             <img src="static/arrows.png" class="leftarrow" />
+              <img src="static/arrow.png" class="rightarrow" />
+              <img src="static/ex.jpg" />
+              <img src="static/capture1.png" id="capture1" />
+              <img src="static/capture3.png" id="capture3" />
+              <img src="static/capture.png" id="capture" />
+          </div>
+          <div class="midcontainer">
+            <div class="midcontent">
+ 
+            	<h1>Submitted Info</h1>
+				<p>Name:  {{ data.name }}</p>
+				<p>Location:  {{ data.location }}</p>
+				<p>Language:  {{ data.language }}</p>
+				<p>comment:  {{ data.comment if data.comment != "" else "No comment" }}</p>
+				<a href="/">Back to Survey</a>
+            </div>
+          </div>
+
+
+      </div>
+	
+</body>
+</html>
+
+
+
+
+
