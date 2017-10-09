@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Gimme your info!!</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action = '/submit' method = "post">
+            Email:<input type = "text" name = "email"/>
+            First name:<input type = "text" name = "first_name"/>
+            Last name:<input type = "text" name = "last_name"/>
+            Password:<input type = "text" name = "password"/>
+            Confirm password:<input type = "text" name = "confirm"/>
+            <input type = "submit" name = "submit">
+        </form>
+    </body>
+</html>

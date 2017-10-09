@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Game</title>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game</h1>
+    <h3>Can you guess the number that I'm thinking?</h3>
+    <p>Take a guess!</p>
+    <form action = '/submit' method = "post">
+        <input type = "text" name = "person_num">
+        <input type = "submit"> 
+    </form>
+    <p> {% if person_num == 0 %}
+            No number
+        {% elif person_num >= stored_num %}
+            Too high!
+        {% elif person_num <= stored_num %}
+            Too low!
+        {% elif person_num == stored_num %}
+            You got it! 
+        {% endif %}</p>
+    <p>Your number: {{person_num}}</p>
+    <a href = '/reset'><button>Reset</button></a>
+</body>
+</html>
