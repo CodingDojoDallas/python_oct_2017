@@ -25,7 +25,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Venv & Flask](https://youtu.be/HPMYjfq55uU)<br>
 [Flask Request Cycle](https://youtu.be/BN8-QE1xOrQ)<br>
 [Session](https://youtu.be/69cjBorGHV4) \- [Session, Inputs & Validation](https://youtu.be/fPW86BvngsM)<br>
-[SQL & ERD](https://youtu.be/dZdeWaciwjo)<br>
+[SQL & ERD](https://youtu.be/dZdeWaciwjo) \- [SQL part 2](https://youtu.be/FzuHhBf__8w) <br>
 
 
 # Resources
