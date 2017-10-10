@@ -1,0 +1,39 @@
+use twitter
+
+# show all information in users - first/last name, birthday, created/updated
+select * from users
+
+# show first and last name of users who have an id between 1 and 3
+select first_name, last_name from users 
+where id between 1 and 3;
+
+# show first/last name of users whose birthdays are after 1/1/1978
+select first_name, last_name from users 
+where (birthday between '1978-01-01 00:00:00' and NOW());
+
+# show all tweets made by user id = 2
+select CONCAT_WS(' ', users.first_name, users.last_name) as user_name, tweets.tweet from users
+left join tweets on users.id = tweets.user_id
+where user_id = 2;
+
+# show all tweets listed after the user that posted them
+select CONCAT_WS(' ', users.first_name, users.last_name) as user_name, tweets.tweet
+from users
+join tweets on tweets.user_id = users.id
+
+# show all tweets favorited by user with id 3
+select tweet, CONCAT_WS(' ', first_name, last_name) as favorited_by from users
+left join faves on users.id = faves.user_id
+left join tweets on faves.tweet_id = tweets.id
+where users.id = 3;
+
+# show all users following user id 2
+select CONCAT_WS(' ', users.first_name, users.last_name) as followed, CONCAT_WS(' ', users2.first_name, users2.last_name) as follower from users
+left join follows on users.id = follows.followed_id
+left join users as users2 on users2.id = follows.follower_id
+where users.id = 2;
+
+# show how many followers each user has
+select first_name, count(followed_id) as num_followers from users
+join follows on users.id = follows.followed_id
+group by users.id

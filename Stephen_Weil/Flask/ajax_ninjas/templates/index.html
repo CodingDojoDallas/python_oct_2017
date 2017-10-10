@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/ajax_ninja.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='scripts/ajax_ninja.js')}}"></script>
+    <title>Ajax Ninjas</title>
+</head>
+<body>
+    <p></p>
+    <img src="" alt="">
+    <form action="/process" method="post">
+        <input type="submit" name="submitred" value="Red">
+        <input type="submit" name="submitblue" value="Blue">
+        <input type="submit" name="submitorange" value="Orange">
+        <input type="submit" name="submitpurple" value="Purple">
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    text-align: center;
+    width: 350px;
+    margin: 25px auto;
+    font-weight: bold;
+    font-size: 36px;
+}
+img{
+    display: block;
+    width: 350px;
+    height: auto;
+    margin: 25px auto; 
+}
+form{
+    width: 350px;
+    margin: 25px auto;
+}
+input{
+    color: white;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 52.5px;
+}
+input[name='submitred']{
+    background-color: red;
+}
+input[name='submitblue']{
+    background-color: blue;
+}
+input[name='submitorange']{
+    background-color: orange;
+}
+input[name='submitpurple']{
+    background-color: purple;
+}
