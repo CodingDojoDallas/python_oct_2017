@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Qualities of being a ninja:</h3>
+    <ul>
+        {% for qualities in ninjas %}
+        <li>{{ qualities }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
