@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # get all customers inside city_id = 312, return first, last, email, address\
+\
+select customer.first_name, customer.last_name, customer.email, address.address from customer\
+join address on address.address_id = customer.address_id\
+where address.city_id = 312;\
+\
+# get all comedy films - return film title, desc, release year, rating, special features, genre\
+\
+select film.title, film.description, film.release_year, film.rating, film.special_features, category.name from film\
+join film_category on film.film_id = film_category.film_id\
+join category on category.category_id = film_category.category_id\
+where category.name = "Comedy";\
+\
+# get films joined by actor_id = 5 - ret actor id, actor name, film title, description, year\
+\
+select actor.actor_id, CONCAT_WS(' ', actor.first_name, actor.last_name) as actor_name, film.title, film.description, film.release_year from actor\
+join film_actor on film_actor.actor_id = actor.actor_id\
+join film on film_actor.film_id = film.film_id\
+where actor.actor_id = 5;\
+\
+# get all customers in store_id = 1 and inside cities (1, 42, 312, 459) - ret first, last, email, address\
+\
+select customer.first_name, customer.last_name, customer.email, address.address from customer\
+join store on customer.store_id = store.store_id\
+join address on customer.address_id = address.address_id\
+where store.store_id = 1 and address.city_id in (1, 42, 312, 459);\
+\
+# get all films with rating = G and special feat = \'91behind the scenes\'92 joined by actor_id = 15, return film # title, description, release year, rating, special feature\
+\
+select film.title, film.description, film.release_year, film.rating, film.special_features from film\
+join film_actor on film_actor.film_id = film.film_id\
+join actor on film_actor.actor_id = actor.actor_id\
+where actor.actor_id = 15 and film.rating = "G" and film.special_features LIKE "%behind the scenes%";\
+\
+# get all actors joined in the film_id 369 - return film_id, title, actor_id, actor_name\
+\
+select film.film_id, film.title, actor.actor_id, CONCAT_WS(' ', actor.first_name, actor.last_name) as actor_name from film\
+join film_actor on film.film_id = film_actor.film_id\
+join actor on actor.actor_id = film_actor.actor_id\
+where film.film_id = 369;\
+\
+# get all drama films with rental rate of 2.99, return film title, description, release year, rating, spec \
+# feature, genre(category), actor first, actor last\
+\
+select film.title, film.description, film.release_year, film.rating, film.special_features, category.name from film\
+join film_category on film_category.film_id = film.film_id\
+join category on film_category.category_id = category.category_id\
+where film.rental_rate = 2.99 and category.name = "Drama";\
+\
+# get all action films which are joined by SANDRA KILMER - return film title, description, release year\
+# rating, special features, genre(category) and actor first/last\
+\
+select film.title, film.description, film.release_year, film.rating, film.special_features, category.name, CONCAT_WS(' ', actor.first_name, actor.last_name) as actor_name from film\
+join film_category on film.film_id = film_category.film_id\
+join category on category.category_id = film_category.category_id\
+join film_actor on film.film_id = film_actor.film_id\
+join actor on actor.actor_id = film_actor.actor_id\
+where actor.first_name = "SANDRA" and actor.last_name = "KILMER" and category.name = "Action";}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <style>
+        p{
+            width: 400px;
+            text-align: center;
+            margin: 25px auto;
+            color: white;
+            font-size: 28px;
+            padding: 10px;
+        }
+        p.red{
+            background-color: red;
+        }
+        p.green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {% if success == False %}
+                    <p class="red">{{ message }}</p>
+                {% else %}
+                    <p class="green">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

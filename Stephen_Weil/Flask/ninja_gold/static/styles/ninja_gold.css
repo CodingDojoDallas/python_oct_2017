@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin-bottom: 15px;
+}
+#wrapper{
+    width: 930px;
+    padding: 20px;
+}
+div.options{
+    display: inline-block;
+    width: 195.5px;
+    margin-right: 20px;
+    border: 1px solid black;
+    padding: 10px;
+}
+div.options#last{
+    margin-right: 0px;
+}
+div#messages{
+    margin-top: 20px;
+    width: 898px;
+    padding: 15px;
+    height: 150px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
