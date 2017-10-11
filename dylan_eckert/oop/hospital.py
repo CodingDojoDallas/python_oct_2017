@@ -1,11 +1,11 @@
 class Patient(object):
-    PATIENT_COUNT = 0
+    pateintcount = 0
     def __init__(self, name, allergies):
         self.name = name
         self.allergies = allergies
-        self.id = Patient.PATIENT_COUNT
-        self.bed_num = None
-        Patient.PATIENT_COUNT += 1
+        self.id = Patient.patientcount
+        self.bednumber = None
+        Patient.patientcount += 1
 
 class Hospital(object):
     def __init__(self, name, cap):
@@ -31,13 +31,13 @@ class Hospital(object):
                     patient.bed_num = self.beds[i]["bed_id"]
                     self.beds[i]["Available"] = False
                     break
-            print "Patient #{} admitted to bed #{}".format(patient.id, patient.bed_num)
+            print "Patient #{} was assigned bed #{}".format(patient.id, patient.bed_num)
         else:
-            "Hospital is at full capacity"
+            "I'm sorry but the hospital is currently at full capacity."
     def discharge(self, patient_id):
         for patient in self.patients:
             if patient.id == patient_id:
-                # free up bed
+                # free up a bed
                 for bed in self.beds:
                     if bed["bed_id"] == patient.bed_num:
                         bed["Available"] = True
