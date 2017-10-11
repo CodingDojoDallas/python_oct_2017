@@ -1,0 +1,102 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Survey</title>
+    </head>
+    
+    <body>
+        <h1>Coding Dojo Survey</h1>
+        <form action='/results' method='post'>
+            Your name:
+            <input type='text' name='name'>
+            <p></p>
+
+            Dojo Location: 
+            <select name="location">
+                <option value="Dallas">Dallas</option>
+                <option value="San Jose">San Jose</option>
+                <option value="New York">New York</option>
+                <option value="Seattle">Seattle</option>
+            </select>
+            <p></p>
+
+            Favorite Language:
+            <select name='language'>
+                <option value="Python">Python</option>
+                <option value="English">English</option>
+                <option value="Javascript">Javascript</option>
+                <option value="HTML">HTML</option>
+            </select> 
+            <p></p>
+
+            Comments (Optional):
+            <p></p>
+            <textarea rows="10" cols="50" name='comment'></textarea>
+            <p></p>
+            <input type='submit' value='Im Done'>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!Doctype html>
+<html>
+    <head>
+        <title>What's My Name</title>
+    </head>
+    
+    <body>
+        <h1>Coding Dojo Survey</h1>
+        
+        <form action='/process' method='post'>
+            Your name: <input type='text' name='name'>
+
+            <p></p>
+
+            Dojo Location: <select name="Location">
+
+                {% for x in location_list %}
+                    <option name="{{ x }}">{{ x }}</option>
+                {% endfor %}
+
+            </select>
+
+            <p></p>
+
+            Favorite Language: <select name='language'>
+
+                {% for y in language_list %}
+                    <option name="{{ y }}">{{ y }}</option>
+                {% endfor %}
+
+            </select> 
+
+            <p></p>
+
+            Comment (Optional):<p></p> <textarea rows="10" cols="50" name='comment'></textarea>
+
+
+            <p></p>
+
+
+            <input type='submit' value='Submit'>
+
+        </form>
+        
+    </body>
+</html> -->
