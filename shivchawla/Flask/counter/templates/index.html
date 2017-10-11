@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>counter if this works</title>
+    </head>
+    <body> 
+        <p>You have viewed this page: {{session['counter']}} {% if session['counter'] == 1 %} time {% else %} times {% endif %} dude </p>
+        <a href="/reset"><button>Reset</button></a>
+        <a href="/dos"><button>Counter + 2</button></a>
+    </body>
+</html>

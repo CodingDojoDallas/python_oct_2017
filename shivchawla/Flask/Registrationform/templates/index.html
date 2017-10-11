@@ -1,0 +1,23 @@
+<html>
+    <head>
+       <title>Registration Form</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %} <!the with messages here help declare a variable in our template that we can use within a specific scope !>
+            {% if messages %} <!Check if there are any messages that came back from the get_flashed_messages() function !>
+                {% for message in messages %} <!loop through all messages !>
+                    <p>{{message}}</p> <!print a message in a p tag if something was raw !>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      <form action='/submit' method='post'>
+          First Name: <input type="text" name='firstname'>
+          Last Name: <input type="text" name="lastname">
+          Email: <input type="email" name="email">
+          Birthdate: <input type="date" name="birthdate">
+          Password: <input type="password" name="password">
+          Re-confirm Password: <input type="password" name ="confirmpassword">
+          <input type ="submit">
+      </form>
+    </body>
+</html>
