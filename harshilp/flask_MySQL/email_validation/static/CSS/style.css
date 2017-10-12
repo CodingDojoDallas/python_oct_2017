@@ -1,0 +1,17 @@
+.error{
+    border:darkred 1px solid;
+    color:white;
+    background-color:red;
+    text-align:center;
+}
+li{
+    list-style:none;
+}
+#green{
+    border:darkgreen 1px solid;
+    background-color:green;
+    text-align:center;
+}
+.container{
+    margin-top:20px;
+}
