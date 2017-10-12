@@ -1,0 +1,28 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+label{
+    display:block;
+}
+button{
+    padding:5px 10px 5px 10px;
+}
+table {
+    border-collapse: collapse;
+    margin:20px 0px 0px 50px;
+}
+table, th, td {
+    border: 1px solid black;
+    padding:5px;
+    text-align:center;
+}
+form{
+    margin: 20px 0px 0px 50px;
+}
+label{
+    margin-bottom: 10px;
+}
+h1, h2{
+    margin:20px 0px 0px 50px;
+}
