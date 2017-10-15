@@ -1,0 +1,5 @@
+(1049, "Unknown database 'frienddb'") - This is the error when you put in a database name that does not exist
+(1146, "Table 'friendsdb.friend' doesn't exist") - This is the error when you select a table that doesn't exist
+(1045, "Access denied for user 'roo4t'@'localhost' (using password: YES)") - This is the error when you give an incorrect username
+(1045, "Access denied for user 'root'@'localhost' (using password: YES)") - This the error when you give an incorrect password
+(2003, "Can't connect to MySQL server on '127.0.0.1' (61)") - This is the error when you give an incorrect port
