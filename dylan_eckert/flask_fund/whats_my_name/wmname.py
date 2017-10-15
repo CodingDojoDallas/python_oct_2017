@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 app = Flask(__name__)
 
 @app.route('/')
@@ -7,9 +7,10 @@ def index():
 
 @app.route('/process', methods=['POST'])
 def process():
-    content = {
+    data = {
     "name" : request.form['name']
     }
-    return render_template("index.html")
+    print data
+    return redirect('/')
 
 app.run(debug=True)
