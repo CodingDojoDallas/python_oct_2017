@@ -1,10 +1,9 @@
 from flask import Flask, request, redirect, render_template, session, flash
 import re, md5, os, binascii
 from mysqlconnection import MySQLConnector
-EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 app = Flask(__name__)
-mysql = MySQLConnector(app, 'login_register')
+mysql = MySQLConnector(app, 'wall')
 app.secret_key = "key"
 
 @app.route('/')
@@ -19,57 +18,44 @@ def register():
 
     data = {
     'salt': binascii.b2a_hex(os.urandom(15)),
-    'first_name': request.form['first_name'],
-    'last_name': request.form['last_name'],
-    'email': request.form['email'].lower(),
+    'username': request.form['username'],
     'password': request.form['password'],
     'pass_conf': request.form['pass_conf'],
     }
 
-    #LOGIC FOR FIRST NAME:
-    if len(data['first_name']) < 2:
-        flash("Please enter a valid first name")
-    elif not data['first_name'].isalpha():
-        flash("Please us characters a-z")
-
-    #LOGIC FOR LAST NAME:
-    if len(data['last_name']) < 2:
-        flash("Please enter a valid last name")
-    elif not data['last_name'].isalpha():
-        flash("Please us characters a-z")
+    #LOGIC FOR USERNAME:
+    if len(data['username']) < 2:
+        flash("Please enter a valid username")
+    elif not data['username'].isalpha():
+        flash("Please use characters a-z")
 
     #LOGIC FOR PASSWORD and PASS CONF:
     if len(data['password']) < 8:
         flash("Password must be at least 8 characters long")
     elif data['password'] != data['pass_conf']:
         flash("Passwords don't match")
-    #LOGIC FOR EMAIL:
-    if len(data['email']) < 1:
-        flash("Please enter an email")
-    elif not EMAIL_REGEX.match(data['email']):
-        flash("Please enter a valid email")
 
     if valid:
         data['password'] = md5.new(data['password']+data['salt']).hexdigest()
-        query = "SELECT * FROM users WHERE email=:email"
-        emails = mysql.query_db(query, data)
+        query = "SELECT * FROM users WHERE username=:username"
+        users = mysql.query_db(query, data)
 
-        if len(emails) == 0:
-            query = "INSERT INTO users (first_name, last_name, password, email, salt) VALUES (:first_name, :last_name, :password, :email, :salt)"
+        if len(users) == 0:
+            query = "INSERT INTO users (password, username, salt) VALUES (:password, :username, :salt)"
             mysql.query_db(query, data)
             return redirect('/')
         else:
-            flash("That email already exists!")
+            flash("That username already exists!")
 
     return redirect('/')
 
 @app.route('/login', methods=['POST'])
 def login():
     login = {
-    'email': request.form['email'].lower(),
+    'username': request.form['username'].lower(),
     'password': request.form['password']
     }
-    query = "SELECT * FROM users WHERE email=:email"
+    query = "SELECT * FROM users WHERE username=:username"
     users = mysql.query_db(query, login)
 
 
@@ -77,7 +63,7 @@ def login():
         flash("Login Successful!")
         return redirect('/')
     else:
-        flash("Please enter an email and password")
-        return redirect('/')
+        flash("Please enter your username and password")
+        return redirect('/wall')
 
 app.run(debug=True)
