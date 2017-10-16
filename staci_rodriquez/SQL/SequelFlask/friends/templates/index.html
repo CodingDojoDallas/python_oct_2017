@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <title>Friends</title>
+</head>
+
+<body>
+  <h2>Friends:</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Friend Since</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jay Patel</td>
+        <td>190</td>
+        <td>Jan 15th</td>
+        <td>2015</td>
+      </tr>
+      <tr>
+        <td>Brendan Stanton</td>
+        <td>175</td>
+        <td>June 19th</td>
+        <td>2015</td>
+      </tr>
+      <tr>
+        <td>Eli Byers</td>
+        <td>120</td>
+        <td>August 12th</td>
+        <td>2016</td>
+      </tr>
+      <tr>
+        <td>Anna Propas</td>
+        <td>98</td>
+        <td>May 3rd</td>
+        <td>1987</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Add a Friend</h2>
+  <form action='/friends' method='POST'>
+    <label for="name">Name:<input type="text" name="name" id="name"></label>
+    <label for="age">Age:<input type="text" name="age" id="age"></label>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

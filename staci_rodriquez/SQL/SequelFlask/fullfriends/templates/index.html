@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Friends</title>
+    <meta name="author" content="Staci Rodriquez">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ff.css') }}">
+    
+</head>
+<body>
+<h2>Friends:</h2>
+<!-- with all the data we can then construct a more structured output -->
+  <table style="width:400px">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Friend Since</th>
+    </tr>
+    {% for friend in all_friends: %}
+    <tr>
+      <td class="table">{{ friend['name'] }}</td>
+      <td class="table">{{ friend['age'] }}</td>
+      <td class="table">{{ friend['friend_since'].strftime('%b %d %Y') }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  <h2>Add a Friend:</h2>
+  <form action='/friends' method='POST'>
+    <label for="name">Name:<input type="text" name="name" id="name"></label>
+    <label for="age">Age:<input type="text" name="age" id="age"></label>
+    <input type="submit" value="Add">
+  </form>
+</body>
+</html>
