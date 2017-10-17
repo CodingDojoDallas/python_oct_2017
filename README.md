@@ -22,12 +22,14 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Tuples](https://youtu.be/4gZ9j7Sa41A)<br>
 [Lists & Dicts](https://youtu.be/O6rBIfDa2mE) \- [listsDict.py](files/listDict.py)<br>
 [OOP Demo](https://youtu.be/jPTmGJghqqU) \- [oop.py](files/oop.py)<br>
+
 [Venv & Flask](https://youtu.be/HPMYjfq55uU)<br>
 [Flask Request Cycle](https://youtu.be/BN8-QE1xOrQ)<br>
 [Session](https://youtu.be/69cjBorGHV4) \- [Session, Inputs & Validation](https://youtu.be/fPW86BvngsM)<br>
 [SQL & ERD](https://youtu.be/dZdeWaciwjo) \- [SQL part 2](https://youtu.be/FzuHhBf__8w) <br>
 [Flask Movies App Part 1](https://youtu.be/u00l82iNiKM) \- [Flask Movies App Part 2](https://youtu.be/-5lvYD1dyA8)<br>
 [SLL Partition](https://youtu.be/IYab5H9-ExE) <br>
+[Flask Movie Wall Demo](https://youtu.be/GiDypyXdGic) <br>
 
 
 # Resources
