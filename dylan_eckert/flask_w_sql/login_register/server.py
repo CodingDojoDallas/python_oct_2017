@@ -29,25 +29,33 @@ def register():
     #LOGIC FOR FIRST NAME:
     if len(data['first_name']) < 2:
         flash("Please enter a valid first name")
+        valid = False
     elif not data['first_name'].isalpha():
         flash("Please us characters a-z")
+        valid = False
 
     #LOGIC FOR LAST NAME:
     if len(data['last_name']) < 2:
         flash("Please enter a valid last name")
+        valid = False
     elif not data['last_name'].isalpha():
         flash("Please us characters a-z")
+        valid = False
 
     #LOGIC FOR PASSWORD and PASS CONF:
     if len(data['password']) < 8:
         flash("Password must be at least 8 characters long")
+        valid = False
     elif data['password'] != data['pass_conf']:
         flash("Passwords don't match")
+        valid = False
     #LOGIC FOR EMAIL:
     if len(data['email']) < 1:
         flash("Please enter an email")
+        valid = False
     elif not EMAIL_REGEX.match(data['email']):
         flash("Please enter a valid email")
+        valid = False
 
     if valid:
         data['password'] = md5.new(data['password']+data['salt']).hexdigest()

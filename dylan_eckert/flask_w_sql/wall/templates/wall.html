@@ -3,8 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>Wall</title>
+    <link rel="stylesheet" href="../static/wall.css">
   </head>
   <body>
-    
+    <h1>Welcome to the Wall, {{ curuser['username'] }}</h1>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class=flashes>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <h2>Write a Post:</h2>
+    <form class="usercontent" action="/post" method="post">
+      <textarea name="content" rows="10" cols="80" placeholder="Write your post in here!"></textarea>
+      <br>
+      <input type="submit" value="Submit Post">
+    </form>
+    <h1>All Posts</h1>
+      {% for post in all_posts: %}
+      <div id="post">
+        <p>{{ post['username'] }}</p>
+        <p>{{ post['content'] }}</p>
+
+        {% for comment in all_comments %}
+          {% if comment.post_id == post.id %}
+        <div id="comment">
+          <p>{{ comment['username'] }}</p>
+          <p>{{ comment['content'] }}</p>
+        </div>
+          {% endif %}
+        {% endfor %}
+
+        <form class="usercontent" action="/comment" method="post">
+          <input type="hidden" name="postid" value="{{post.id}}">
+          <textarea name="content" rows="3" cols="60" placeholder="Have something to say? Write it here!"></textarea>
+          <br>
+          <input type="submit" value="Submit Comment">
+        </form>
+      </div>
+      {% endfor %}
   </body>
 </html>
