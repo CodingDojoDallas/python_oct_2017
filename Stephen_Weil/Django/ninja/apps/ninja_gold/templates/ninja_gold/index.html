@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ninja_gold/ninja_gold.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Your Gold: {{request.session.total}}</h1>
+        <h3><a href="/reset">Start Over</a></h3>
+        <div class="options">
+            <h2>Farm</h2>
+            <p>(Earns 10-20 golds)</p>
+            <a href="/farm">Find Gold!</a>
+        </div><!--
+     --><div class="options">
+            <h2>Cave</h2>
+            <p>(Earns 5-10 golds)</p>
+            <a href="/cave">Find Gold!</a>
+        </div><!--
+     --><div class="options">
+            <h2>House</h2>
+            <p>(Earns 2-5 golds)</p>
+            <a href="/house">Find Gold!</a>
+        </div><!--
+     --><div class="options" id="last">
+            <h2>Casino</h2>
+            <p>(Takes 0-50 golds)</p>
+            <a href="/casino">Find Gold!</a>
+        </div><!--
+     --><div id="messages">
+         {% if 'activites' in request.session %}
+            {% for activity in request.session.activites reversed %}
+                <p class="{{activity.class}}">{{activity.text}} ({{activity.time}})</p>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+</body>
+</html>

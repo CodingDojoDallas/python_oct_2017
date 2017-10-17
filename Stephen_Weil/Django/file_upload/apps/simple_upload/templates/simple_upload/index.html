@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uploading!</title>
+</head>
+<body>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% if 'uploaded_file_url' in request.session %}
+        <p>File uploaded at: <a href="{{request.session.uploaded_file_url}}">{{request.session.uploaded_file_url}}</a></p>
+    {% endif %}
+</body>
+</html>
