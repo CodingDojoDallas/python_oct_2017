@@ -33,6 +33,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 [Django Demo](https://youtu.be/l84zkNT_oiQ) <br>
 [Django Route](https://youtu.be/EjPY_SmJdR4) <br>
+[Django ORM](https://youtu.be/TjdGOdPYA8s) <br>
 
 
 # Resources
