@@ -37,6 +37,8 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Model Manager](https://youtu.be/6LMTlzRUMrY) <br>
 [Many-to-many Part 1](https://youtu.be/moLm9YTAFrc) <br>
 [Many-to-many Part 2](https://youtu.be/wJRJSIijHXs) <br>
+[Django deployment](https://youtu.be/9DF6npOUE9A) <br>
+[Django Deployment Demo](https://youtu.be/rLPfyVKvEh8) <br>
 
 # Resources
 [Eli Byers Cheat Sheets](https://github.com/eli-byers/Cheat_Sheets)<br>
