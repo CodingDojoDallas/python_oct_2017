@@ -56,7 +56,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Jinja2 Docs](http://jinja.pocoo.org/docs/2.9/)<br>
 [Flask Docs](http://flask.pocoo.org/docs/0.12/)<br>
 
-[Python Deployment Update](files/djangoDeploymentUpdate.pd)
+[Python Deployment Update](files/pythonDeploymentUpdate.md)
 
 
 # Schedule
