@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'seshwords_app/css/wordstyles.css' %}">
+  </head>
+  <body>
+    <form class="" action="/add_word" method="post">
+      {% csrf_token %}
+      <h1>Add a new word</h1>
+      <input type="text" name="word" value="">
+      <p>Choose color:</p>
+      <span>Red</span>
+      <input class="red" type="radio" name="color" value="red">
+      <span>| Green</span>
+      <input class="green" type="radio" name="color" value="green">
+      <span>| Blue</span>
+      <input class="blue" type="radio" name="color" value="blue">
+      <br>
+      <br>
+      <input class="bigfont" type="checkbox" name="bigfont" value="bigfont">
+      <span>Show in BIG fonts!</span>
+      <br>
+      <input type="submit" name="addSession" value="Add to Session">
+      <hr>
+    </form>
+    <a href="/clear_session"><button type="button" name="button">Clear Session</button></a>
+    <table>
+      <tr>
+        <td>Word</td>
+        <td>Time Added</td>
+      </tr>
+      {% for word in request.session.words %}
+      <tr>
+        <td class="{{word.color}} {{word.bigfont}}">{{word.word}}</td>
+        <td>{{word.time}} </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

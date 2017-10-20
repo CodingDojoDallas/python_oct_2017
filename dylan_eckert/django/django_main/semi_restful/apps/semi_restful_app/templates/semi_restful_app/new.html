@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New User</title>
+  </head>
+  <body>
+    <h5> Brand Spanking New User </h5>
+
+    <form action="/users/create" method ="post"> <!-- takes you to the named route create in your URLS.PY /////    Make sure to give it METHOD POST      -->
+      {% csrf_token %}
+      <label>First Name: </label>
+      <input type="text" name="first_name"  />
+      <label>Last Name: </label>
+      <input type="text" name="last_name"  />
+      <label>Email: </label>
+      <input type="text" name="email"  />
+      <button type="submit">Create</button>
+    </form>
+
+    <a href="{% url 'all_users' %}">Go Back</a>
+    <!-- this URL will take me to the index.html page where I
+    will display all users -->
+  </body>
+</html>

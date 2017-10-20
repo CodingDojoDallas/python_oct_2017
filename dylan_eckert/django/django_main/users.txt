@@ -1,0 +1,12 @@
+Django Shell Commands:
+
+User.objects.all()
+User.objects.last()
+User.objects.create(first_name=“Phil”, last_name=“Billers”, email_address=“phil@bob.com", age=12)
+User.objects.first()
+User.objects.order_by("first_name”)    # this query will order in ascending (a-z)
+User.objects.order_by(“-first_name")   # This query will order in descending (z-a)
+u = User.objects.get(id=3)
+u.last_name = "phillers"
+u.save()
+User.objects.get(id=1).delete()

@@ -1,0 +1,38 @@
+Dojo Ninjas Shell Commands:
+
+>>> from apps.donin_app.models import *
+>>> Dojo.objects.create(name="Coding Dojo Silicon Valley", city="Mountain View", state="CA")
+<Dojo: Coding Dojo Silicon Valley Mountain View CA>
+>>> Dojo.objects.create(name="Coding Dojo Seattle", city="Seattle", state="WA")
+<Dojo: Coding Dojo Seattle Seattle WA>
+>>> Dojo.objects.create(name="Coding Dojo New York", city="New York", state="NY")
+<Dojo: Coding Dojo New York New York NY>
+>>> Dojo.objects.get(id=1).delete()
+>>> Dojo.objects.get(id=2).delete()
+>>> Dojo.objects.get(id=3).delete()
+
+>>> Dojo.objects.create(name="Coding Dojo Silicon Valley", city="Mountain View", state="CA")
+<Dojo: Coding Dojo Silicon Valley Mountain View CA>
+>>> Dojo.objects.create(name="Coding Dojo Seattle", city="Seattle", state="WA")
+<Dojo: Coding Dojo Seattle Seattle WA>
+>>> Dojo.objects.create(name="Coding Dojo New York", city="New York", state="NY")
+<Dojo: Coding Dojo New York New York NY>
+
+>>> Ninja.objects.create(first_name="Bob", last_name="Bobbers", dojo=Dojo.objects.get(id=4))
+<Ninja: Bob Bobbers Coding Dojo Silicon Valley Mountain View CA>
+>>> Ninja.objects.create(first_name="Bill", last_name="Billers", dojo=Dojo.objects.get(id=4))
+<Ninja: Bill Billers Coding Dojo Silicon Valley Mountain View CA>
+>>> Ninja.objects.create(first_name=“Phil”, last_name=“Phillers”, dojo=Dojo.objects.get(id=4))
+<Ninja: Phil Phillers Coding Dojo Silicon Valley Mountain View CA>
+
+>>> Ninja.objects.create(first_name="C", last_name="CC", dojo=Dojo.objects.get(id=5))
+<Ninja: C CC Coding Dojo Seattle Seattle WA>
+>>> Ninja.objects.create(first_name="D", last_name="DD", dojo=Dojo.objects.get(id=5))
+<Ninja: D DD Coding Dojo Seattle Seattle WA>
+>>> Ninja.objects.create(first_name="E", last_name="EE", dojo=Dojo.objects.get(id=5))
+<Ninja: E EE Coding Dojo Seattle Seattle WA>
+
+>>> Dojo.objects.first().ninjas.all()
+<QuerySet [<Ninja: Bob Bobbers Coding Dojo Silicon Valley Mountain View CA>, <Ninja: Bill Billers Coding Dojo Silicon Valley Mountain View CA>, <Ninja: Phil Phillers Coding Dojo Silicon Valley Mountain View CA>]>
+>>> Dojo.objects.last().ninjas.all()
+<QuerySet [<Ninja: F FF Coding Dojo New York New York NY>, <Ninja: G GG Coding Dojo New York New York NY>, <Ninja: H HH Coding Dojo New York New York NY>]>
