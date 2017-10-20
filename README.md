@@ -20,18 +20,6 @@ I :snake: Python!!
 2. Commit
 3. Push to master
 
-### In your EC2
-
-1. Navigate into your repo folder
-2. Remove your db.sqlite3 
-3. Pull the changes from git
-4. wget your db.sqlite3 from git
-```
-wget https://raw.githubusercontent.com/<username>/<repo>/master/db.sqlite3
-```
-5. Restart gunicorn: ```sudo systemctl restart gunicorn```
-6. Restart nginx: ```sudo service nginx restart```
- 
 # Daily Commits
 
 Please commit daily. That way we can provide you with feedback :) or just a thumbs up if everything looks good. Here is a good resource that describes how daily commit process should go.
@@ -67,6 +55,8 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [pygame](https://www.pygame.org/)<br>
 [Jinja2 Docs](http://jinja.pocoo.org/docs/2.9/)<br>
 [Flask Docs](http://flask.pocoo.org/docs/0.12/)<br>
+
+[Python Deployment Update](files/djangoDeploymentUodate.pd)
 
 
 # Schedule
