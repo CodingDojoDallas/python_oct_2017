@@ -11,14 +11,6 @@ I :snake: Python!!
  git remote add upstream https://github.com/CodingDojoDallas/python_oct_2017.git
  ```
  5. Profit!
- 
-# Deployment Update
-
-### Locally
-
-1. Add all your local changes
-2. Commit
-3. Push to master
 
 # Daily Commits
 
