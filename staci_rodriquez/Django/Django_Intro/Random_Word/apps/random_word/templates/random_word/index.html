@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Random Word</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Random Word Generator</h1>
+        <h3>({{ request.session.counter }} new words generated) </h3>
+        <!-- Using double curlies will allow you to pass the session.counter   -->
+
+        <div id="randomwordholder">
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ random_word }}
+                <!-- Displaying the actual random word  -->
+            </div>
+        </div>
+
+        <form action='/randomword' method="POST">
+            <!-- Each button must be in a form for functionality with POST method. its action="" will direct it to the reset URL and inturn that will direct you to the method -->
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Generate" class="btn btn-default navbar-btn">
+        </form>
+
+        <form action='/reset' method='POST'>
+            <!-- Each button must be in a form for functionality with POST method. its action="" will direct it to the reset URL and inturn that will direct you to the method -->
+            {% csrf_token %}
+            <input type='submit' name='submit' value='Reset' class='btn btn-default navbar-btn'>
+        </form>
+    </div>
+</body>
+</html>

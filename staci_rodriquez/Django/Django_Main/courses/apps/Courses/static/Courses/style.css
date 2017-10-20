@@ -1,0 +1,24 @@
+table{
+    width: 80%;
+    border: 1px solid black;
+    margin-bottom: 25px;
+}
+thead {
+    background-color: lightskyblue;
+}
+tbody {
+    text-align: center;
+}
+tbody > tr:nth-child(even){
+    background-color: lightgray;
+}
+th, td {
+    height: 10px;
+}
+textarea{
+    display: block;
+}
+.messages > p{
+    color: red;
+    font-weight: bold;
+}

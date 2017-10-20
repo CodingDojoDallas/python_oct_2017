@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <p>Thanks for submitting this form! You have submitted this form {{ request.session.tries }} now</p>
+        <h4>Submitted Information</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ request.session.name }}</td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>{{ request.session.location }}</td>
+                </tr>
+                <tr>
+                    <td>Language:</td>
+                    <td>{{ request.session.language }}</td>
+                </tr>
+                <tr>
+                    <td>Comment:</td>
+                    <td>{{ request.session.comment }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

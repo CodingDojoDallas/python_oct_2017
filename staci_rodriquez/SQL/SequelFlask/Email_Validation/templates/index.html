@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>SEARCH</title>
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+    <h1>Please Submit Your Email</h1>
+
+<!--====================   SEARCH FOR EMAIL  =====================================================-->
+    <form action="/success" method="POST">
+      <label>Email:</label>
+      <input type="text" name="email"  />
+      <button type="submit" value="success">Submit</button>
+    </form>
+
+</body>
+</html>
