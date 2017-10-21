@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'users/CSS/style.css' %}">                
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <title>Users</title>
+    </head>
+    <body class='container'>
+        {% include 'users/navbar.html' %}
+        <h3>{{user.first_name}} {{user.last_name}}</h3>
+        <p>Registered at: {{user.created_at}}</p>        
+        <p>User ID: {{user.id}}</p>
+        <p>Email Address: {{user.email}}</p>
+        <p>Description: {{user.desc }}</p>
+
+        <div class='col-md-6'>
+            <h3>Leave a message for {{user.first_name}}:</h3>
+            <form action='/users/post/{{user.id}}' method='POST'>
+                {% csrf_token %}
+                <div class='form-group'>
+                    {% include 'login_reg/error.html' with tag="message error" %}                        
+                    <textarea name="message" class="form-control" placeholder='Send a message'></textarea>
+                </div>
+                <Button type="submit" class="btn btn-primary">Post</Button>
+            </form>
+            {% for message in user.received_messages.all|dictsortreversed:'created_at' %}
+            <p><a href='/users/show/{{message.senders.first.id}}'><b>{{message.senders.first.first_name}} {{message.senders.first.last_name}}</b></a> on {{message.created_at}}</p>
+            <p>{{message.text}}</p>
+            <ul>
+            {% for comment in message.comments.all %}
+                <li>{{comment.content}} - {{comment.commenters.first.first_name}} on {{comment.created_at}}</li>
+            {% endfor %}
+            </ul>
+            <form action='/users/comment/{{user.id}}/{{message.id}}' method='POST'>
+                {% csrf_token %}
+                <div class='form-group'>
+                    {% include 'login_reg/error.html' with tag="message error" %}                        
+                    <textarea name="comment" class="form-control" placeholder='Type a comment'></textarea>
+                </div>
+                <Button type="submit" class="btn btn-primary">Comment</Button>
+            </form>
+            {% endfor %}
+        </div>
+    </body>
+</html>

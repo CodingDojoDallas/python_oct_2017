@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Gold</title>
+        {% load static %}
+        <link rel="stylesheet"href="{% static 'ninjaGold/CSS/styles.css' %}">                        
+    </head>
+    <body>
+        <p>Your gold: {{ request.session.gold }}</p>
+        {% if request.session.debt == 'yes' %}
+        <h1>You POOR!</h1>
+        {% endif %}
+        <div>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <h3>Farm</h3>
+                <p>(earns 10 - 20 gold)</p>
+                <input type="hidden" name="building" value="farm" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            <form action="/process" method="post">
+                {% csrf_token %}                
+                <h3>Cave</h3>
+                <p>(earns 5 - 10 gold)</p>
+                <input type="hidden" name="building" value="cave" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            <form action="/process" method="post">
+                {% csrf_token %}                
+                <h3>House</h3>
+                <p>(earns 2 - 5 gold)</p>
+                <input type="hidden" name="building" value="house" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            <form action="/process" method="post">
+                {% csrf_token %}                
+                <h3>Casino</h3>
+                <p>(earns/loses 0 - 50 gold)</p>
+                <input type="hidden" name="building" value="casino" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            {% if request.session.debt == 'nah' %}
+            <img src="{% static 'ninjaGold/img/shaqShimy.gif' %}">
+            {% endif %}
+        </div>
+        <div id = 'log'>
+            <h2>Activity log:</h2>
+            {% for log in request.session.log reversed %}
+                {% if log|make_list|first == 'L' %}
+                    <p style="color:maroon;">{{log}}</p>
+                {% else %}
+                    <p style="color:darkgreen;">{{log}}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </body>
+</html>

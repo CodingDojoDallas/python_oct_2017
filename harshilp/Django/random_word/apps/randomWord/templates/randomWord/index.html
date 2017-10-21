@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Display Time</title>
+    </head>
+    <body>
+        <h3>Random word attempt #{{request.session.count}}</h3>
+        <h1>{{random}}</h1>
+        <form action='/' method='post'>
+            {% csrf_token %}
+            <button type='submit'>Generate</button>
+        </form>
+        <form action='/reset' method='post'>
+            {% csrf_token %}
+            <button type='submit'>Reset</button>
+        </form>
+    </body>
+</html>
