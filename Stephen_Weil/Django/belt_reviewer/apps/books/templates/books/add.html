@@ -1,0 +1,65 @@
+{% extends 'users/base.html' %}
+{% block title %}Add Book and Review{% endblock %}
+{% block content %}
+<div class="row justify-content-end headerband">
+    <div class="col-3 right"><a href="/books">Home</a> | <a href="/users/logout">Logout</a></div>
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <h2>Add a New Book Title and a Review:</h2>
+        <div class="form">
+            <form action='/books/create' method='POST'>
+                {% csrf_token %}
+                <p class="long">Book Title: <input type="text" name="title"></p>
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "titlelen error" or message.tags == "titlechars error" %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Author:</p>
+                <p class="indent">
+                    {% if authors %}
+                    Choose from the list: <select name="author">
+                    {% for author in authors %}
+                    <option value="{{author}}">{{ author }}</option>
+                    {% endfor %}
+                </select>{% endif %}</p>
+                <p class="indent">Or add a new author: <input type="text" name="addauthor"></p>
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "authorlen error" or message.tags == "authorchars error" %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Review:</p> 
+                <p><textarea class="review" name="review"></textarea></p>
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "review error" %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Rating: <select name="stars">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> Stars</p>
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "stars error" %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <Button type="submit" class="btn btn-primary">Add Book and Review</Button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

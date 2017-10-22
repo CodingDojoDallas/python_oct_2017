@@ -1,0 +1,44 @@
+{% extends 'users/base.html' %} 
+{% block title %}Dashboard{% endblock %}
+{% block scripts %}
+{% load static %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'users/delete.js' %}"></script>
+{% endblock %}
+{% block content %}
+<h1>{% if request.session.level == 1 %}Manage{% else %}All{% endif %} Users</h1>
+{% if request.session.level == 1 %}
+<p>
+    <a href="/users/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add new user</a>
+</p>{% endif %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>User Since</th>
+            <th>User Level</th>
+            {% if request.session.level == 1%}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% if users %}
+        {% for user in users %}
+        <tr>
+            <th scope="row">{{user.id}}</th>
+            <td><a href="/users/show/{{user.id}}">{{user.first}} {{user.last}}</a></td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at}}</td>
+            <td>{% if user.level == 1 %}Admin{% else %}Normal{% endif %}</td>
+            {% if request.session.level == 1%}
+            <td><a href="users/edit/{{user.id}}">edit</a> | <a class="delete" href='#' data-href="users/remove/{{user.id}}">remove</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

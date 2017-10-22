@@ -1,0 +1,46 @@
+{% extends 'users/base.html' %}
+{% block title %}New User{% endblock %}
+{% block scripts %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'users/signin.css' %}">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h1>Add a new user</h1>
+        <form action='/users/create' method='POST'>
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" placeholder='Email Address'>
+            {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'email error' %}
+                    <p class="error">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+            <input type="text" name="first" class="form-control" placeholder='First Name'>
+            <input type="text" name="last" class="form-control" placeholder='Last Name'>
+            {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'namelen error' or message.tags == 'namechars error' %}
+                    <p class="error">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+            <input type="password" name="pword" class="form-control" placeholder='Password'>
+            <input type="password" name="conf" class="form-control" placeholder='Confirm Password'>
+            {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'pwlen error' or message.tags == 'pwconf error' %}
+                    <p class="error">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+            <Button type="submit" class="btn btn-primary">Create</Button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <a href="/dashboard" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Return to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

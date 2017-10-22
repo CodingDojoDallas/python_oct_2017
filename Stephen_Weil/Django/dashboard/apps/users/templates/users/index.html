@@ -1,0 +1,25 @@
+{% extends 'users/base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <h1>Welcome to the Test App!</h1>
+        <p>We're going to build a cool application using a MVC framework!</p>
+        <p><a href="/signin" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Start</a></p>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h3>Manage Users</h3>
+        <p>Using this application, you'll learn how to add, remove and edit users for the application.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Leave Messages</h3>
+        <p>Users will be able to leave a message to another user through the application</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Edit User Information</h3>
+        <p>Admins will be able to edit another user's information (email address, first name, last name, etc).</p>
+    </div>
+</div>
+{% endblock %}

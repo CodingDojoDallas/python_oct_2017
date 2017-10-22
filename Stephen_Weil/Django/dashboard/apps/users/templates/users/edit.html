@@ -1,0 +1,106 @@
+{% extends 'users/base.html' %} 
+{% block title %}Edit Profile{% endblock %}
+{% block scripts %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'users/signin.css' %}">
+{% endblock %}
+{% block content %} 
+{% if request.session.id == user.id %}
+<h1>Edit Profile</h1>
+{% elif request.session.level == 1 %}
+<h1>Edit User #{{user.id}}</h1>
+{% endif %}
+<div class="row">
+    <div class="col-md-6">
+        <div class='form'>
+            <form action='/users/update/{{user.id}}' method='POST' class="edit">
+                {% csrf_token %}
+                <h3>Edit Information</h3>
+                <p>Email Address:</p>
+                <input type="email" name="email" class="form-control" value='{{user.email}}'> 
+                {% if messages %} 
+                {% for message in messages %} 
+                {% if message.tags == 'email error' %}
+                <p class="error">{{ message }}</p>
+                {% endif %} 
+                {% endfor %} 
+                {% endif %}
+                <p>First Name:</p>
+                <input type="text" name="first" class="form-control" value='{{user.first}}'>
+                <p>Last Name:</p>
+                <input type="text" name="last" class="form-control" value="{{user.last}}"> 
+                {% if messages %} 
+                {% for message in messages %} 
+                {% if message.tags == 'namelen error' or message.tags == 'namechars error' %}
+                <p class="error">{{ message }}</p>
+                {% endif %} 
+                {% endfor %} 
+                {% endif %}
+                {% if request.session.level == 1 %}
+                <p>User Level:</p>
+                <select name="level">
+                    <option>Normal</option>
+                    <option>Admin</option>
+                </select>
+                {% endif %}
+                {% if messages %} 
+                {% for message in messages %} 
+                {% if message.tags == 'profile success' %}
+                <p class="success">{{ message }}</p>
+                {% endif %} 
+                {% endfor %} 
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class='form'>
+            <form action='/users/update/{{user.id}}' method='POST' class="edit">
+                {% csrf_token %}
+                <h3>Change Password</h3>
+                <p>New Password:</p>
+                <input type="password" name="pword" class="form-control"> {% if messages %} {% for message in messages %} {% if message.tags == 'pwlen error' %}
+                <p class="error">{{ message }}</p>
+                {% endif %} {% endfor %} {% endif %}
+                <p>Confirm New Password:</p>
+                <input type="password" name="conf" class="form-control"> {% if messages %} {% for message in messages %} {% if message.tags == 'pwconf error' %}
+                <p class="error">{{ message }}</p>
+                {% endif %} {% endfor %} {% endif %}
+                {% if messages %} 
+                {% for message in messages %} 
+                {% if message.tags == 'pword success' %}
+                <p class="success">{{ message }}</p>
+                {% endif %} 
+                {% endfor %} 
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% if request.session.id == user.id %}
+<div class="row">
+    <div class="col-md-12">
+        <div class='form'>
+            <form action='/users/update/{{user.id}}' method='POST' class="edit">
+                {% csrf_token %}
+                <h3>Edit Description</h3>
+                <textarea name="desc" rows="10"></textarea>
+                {% if messages %} {% for message in messages %} {% if message.tags == 'desc error' %}
+                <p class="error">{{ message }}</p>
+                {% endif %} {% endfor %} {% endif %}
+                {% if messages %} 
+                {% for message in messages %} 
+                {% if message.tags == 'desc success' %}
+                <p class="success">{{ message }}</p>
+                {% endif %} 
+                {% endfor %} 
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
