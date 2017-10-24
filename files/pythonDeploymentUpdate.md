@@ -10,7 +10,11 @@
 ### In your EC2
 
 1. Navigate into your project folder
-2. Add just your settings.py file: ```git add settings.py```
+2. Git add everything but db.sqlite3
+   ```
+   git add .
+   git reset db.sqlite3
+   ```
 3. Commit
 4. Stash all db changes: ```git stash```
 4. Pull the changes from git
