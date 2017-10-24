@@ -1,0 +1,7 @@
+<form action="/blogs/create" method="post">
+	{% csrf_token %}
+	Blog Name: <input type="text" name="name" placeholder="blog name">
+    Description: <textarea name="desc" placeholder="description"></textarea>
+	<input type="submit" value="submit">
+	<p>{{request.session.name}}</p>
+</form>

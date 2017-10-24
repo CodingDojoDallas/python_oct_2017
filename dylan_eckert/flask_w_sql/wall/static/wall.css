@@ -1,0 +1,19 @@
+#post {
+  border: 1px solid black;
+  padding-left: 10px;
+}
+#comment {
+  border: 5px dashed black;
+  margin-left: 10px;
+  padding-left: 10px;
+  display: inline-block;
+  width: 500px;
+}
+div {
+  display: inline-block;
+  width: 600px;
+}
+.usercontent {
+  display: inline-block;
+  margin-left: 10px;
+}

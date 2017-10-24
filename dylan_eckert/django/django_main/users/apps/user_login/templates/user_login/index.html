@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>user login</title>
+  </head>
+  {% csrf_token %}
+  <body>
+    <h1>This is the info</h1>
+    {% for user in users %}
+    <p>First Name: {{ user.first_name }}</p>
+    {% endfor %}
+  </body>
+</html>

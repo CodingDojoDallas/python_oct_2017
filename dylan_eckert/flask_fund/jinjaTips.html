@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success!</title>
+  </head>
+  <body>
+    <h1>This is the success page!</h1>
+    <a href="/">Home/Root Page</a>
+        {% if not name %}<!-- THIS LANGUAGE IS CALLED "JINJA"!!! -->
+          <p>No Name!</p>
+        {% endif %}<!-- "JINJA"!!! -->
+<!--
+Your python when using return render_template should have the 'name' attribute declared and given a value
+
+Ex:
+@app.route('/')
+def index():                             ,,,,,,,,,,
+    return render_template("index.html", name="Bob")
+                                         ``````````
+ -->
+  </body>
+</html>
