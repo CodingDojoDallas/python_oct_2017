@@ -1,0 +1,30 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.red{
+    color:red;
+}
+.blue{
+    color:blue;
+}
+.green{
+    color:green;
+}
+.purple{
+    color:purple;
+}
+.big{
+    font-size:36px;
+}
+.small{
+    font-size:24px;
+}
+.left{
+    border-right:solid 2px black;
+    height:500px;
+}
+.container{
+    padding-top:50px;
+}

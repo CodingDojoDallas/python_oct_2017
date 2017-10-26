@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='CSS/style_wall.css') }}">                
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='JS/function.js') }}"></script>
+    <title>The Wall</title>
+</head>
+    <body class = 'container'> 
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <div class='container'>
+                <a class="navbar-brand" href="#">Dojo Wall</a>
+                <span class="navbar-text">
+                        Gaze beyond, <a href="#" class="navbar-link">{{session['name']}}</a>
+                </span>
+                <span class="navbar-text">
+                        <a href="/logout" class="navbar-link">Log Off</a>
+                </span>
+            </div>
+        </nav>
+        <div class='row justify-content-center'>  
+            <form action='/post' method='POST' class='col-8'>
+                <div class='form-group'>
+                    <h3>Post a Message:</h3>
+                    <input type="text" name="message" class="form-control">
+                </div>
+                <Button type="submit" class="btn btn-primary">Post</Button>
+            </form>   
+        </div>
+        {% if messages %}
+        <div class="list-group">
+        {% for message in messages %}
+        <a href="#" class="list-group-item list-group-item-action list-group-item-primary flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{message['name']}}</h5>
+                <small class="text-muted">{{message['time']}}</small>
+            </div>
+            <p class="mb-1">{{message['message']}}</p>
+        </a>
+        {% with errors = get_flashed_messages(category_filter=["Error:CommentDelete"]) %}
+        {% include "error.html" %}
+        {% endwith %}
+            {% if comments %}
+                {% for comment in comments %}
+                    {% if comment['message_id'] == message['id'] %}
+                    <div class='row col-12'>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary flex-column align-items-start active col-6">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{comment['name']}}</h5>
+                            <small class="text-muted">{{comment['time']}}</small>
+                        </div>
+                        <p class="mb-1">{{comment['comment']}}</p>
+                    </a>
+                    <form action='/delete/{{comment["id"]}}' method='POST' class='col-6'>
+                        <Button type="submit" class="btn btn-primary delete">X</Button>
+                    </form>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <form action='/comment/{{message["id"]}}' method='POST' class='cmt'>
+                <div class='form-group'>
+                    <input type="text" name="comment" class="form-control">
+                </div>
+                <Button type="submit" class="btn btn-primary">Comment</Button>
+            </form>
+          {% endfor %}
+          </div>
+          {% endif %}
+          <button type='delete' class='btn btn-danger' id='delete'>Delete Comment</button>
+    </body>
+</html>

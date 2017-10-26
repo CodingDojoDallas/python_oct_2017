@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Results</title>
+        <link rel="stylesheet" href="{% static '/survey/CSS/styles.css' %}">   
+        
+    </head>
+    <body>
+        <h4>You've submitted this form {{request.session.count}} times!</h4>
+        <h3>Results:</h3>
+        <p>Name: {{request.session.name}}</p>
+        <p>Dojo Location: {{request.session.location}}</p>
+        <p>Favorite Language: {{request.session.language}}</p>
+        <p>Comment: {{request.session.comments}}</p>
+        <form action="/goBack" method='post'>
+            {% csrf_token %}
+            <button type="submit" value="Go Back">Go Back</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+    <div class='container'>
+        <span class="navbar-brand">
+            Welcome
+        </span>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+            aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/users/show/{{request.session.user_id}}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/edit">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/logoff">Log Off</a>
+            </li>
+        </ul>
+        <!-- Links -->
+    </div>
+</nav>

@@ -1,0 +1,47 @@
+body.container{
+    background-image: url("../img/the_wall.jpg");
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+label, h3, h1{
+    color:white;
+}
+body, html {
+    height: 100%;
+}
+body {
+    padding-top: 70px;
+}
+.col-9{
+    color:black;
+    background-color:white;
+}
+.list-group-item{
+    margin-bottom:10px;
+}
+.list-group{
+    margin-top:20px
+}
+.mb-1{
+    word-wrap: break-word;
+}
+.cmt{
+    margin-bottom:15px;
+}
+.col-6{
+    display:inline-block;
+}
+#delete{
+    margin-bottom:20px;
+}
+button.delete{
+    display:none;
+}
+.error{
+    color:red;
+}
+

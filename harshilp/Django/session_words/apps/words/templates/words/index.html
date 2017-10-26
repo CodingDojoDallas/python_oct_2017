@@ -1,0 +1,51 @@
+<!DOCTYPE html> {% load staticfiles %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Session Words</title>
+    <link rel="stylesheet" href="{% static '/words/CSS/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class='container'>
+    <div class='row'>
+        <div class='col-5 left'>
+            <h3>Add a new word</h3>
+            <form action='/addWord' method='post'>
+                {% csrf_token %}
+                <input type='text' name='word' class='form-group'> Choose Color:
+                <select name="color" class='form-group'>
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                </select>
+                <div class='form-group'>
+                    <input type="checkbox" name="size" value='big'>
+                    <label for="size">make font BIG?</label>
+                </div>
+                <button type='submit' value='Submit' class='btn btn-primary'>Submit to session</button>
+            </form>
+        </div>
+        <div class='col-5'>
+            <form action='/clear' method='post'>
+                {% csrf_token %}
+                <button type='submit' class='btn btn-danger'>Clear Session</button>
+            </form>
+            {% for word in request.session.words %}
+            <p class='{{word.color}} {{word.size}}'>{{word.word}}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>
