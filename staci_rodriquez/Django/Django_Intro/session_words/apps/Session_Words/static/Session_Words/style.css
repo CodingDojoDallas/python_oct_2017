@@ -1,0 +1,31 @@
+.separator{
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    height: 500px;
+}
+.separator:nth-child(2){
+    border-left: solid 2px black;
+    padding-left: 30px;
+}
+.form-group{
+    margin: 10px;
+}
+.big{
+    font-size: 2em;
+}
+.word{
+    margin: 0;
+}
+
+.red{
+    color:red;
+}
+
+.green{
+    color:green;
+}
+
+.blue{
+    color:blue;
+}

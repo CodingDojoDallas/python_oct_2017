@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ninja Gold</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'ninja_gold/style.css' %}">
+    </head>
+    <body>
+        <div class="golddisplay">
+            <label for="golds">Your Gold</label>
+            <input type="text" disabled name="golds" value="{{ request.session.total }}">
+        </div>
+        <div>
+            <form class="buildings"action='/process_money/farm' method="POST">
+                {% csrf_token %}
+                <h3>Farm</h3>
+                <h4>(earns 10-20) golds</h4>
+                <input type="submit" value="Find Gold!">
+            </form>
+            <form class="buildings" action='/process_money/cave' method="POST">
+                {% csrf_token %}                
+                <h3>Cave</h3>
+                <h4>(earns 5-10) golds</h4>
+                <input type="submit" value="Find Gold!">
+            </form>
+            <form class="buildings" action='/process_money/house' method="POST">
+                {% csrf_token %}                
+                <h3>House</h3>
+                <h4>(earns 2-5) golds</h4>
+                <input type="submit" value="Find Gold!">
+            </form>
+            <form class="buildings" action='/process_money/casino' method="POST">
+                {% csrf_token %}                
+                <h3>Casino</h3>
+                <h4>(earns/takes 0-50) golds</h4>
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <h4>Activities:</h4>
+        <div class="message-log">
+            {% for log in request.session.logs reversed %}
+                <p class='{{ log.class }}'>{{ log.message }}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Great Number Game</title>
+	<link rel="stylesheet" type="text/css" href="../static/GNG.css">
+
+</head>
+
+<body>
+	<h1>Welcome to the Great Number Game!</h1>
+	<p>I am thinking of a number between 1 and 100</p>
+	<p>Take a guess!</p>
+	{% if message %}
+	<div id="box" style="background-color: {{color}}">
+		<p>{{message}}</p>
+		{% if replay == "True" %}
+		<form action="/reset" method="get">
+			<input type="submit" value="Play Again">
+		</form>
+		{% endif %}
+	</div>
+	{% endif %}
+	{% if replay != "True" %}
+	<form action="/guess" method="post">
+		<input type="number" name="guess">
+		<input type="submit" value="Submit">
+	</form>
+	{% endif %}
+
+</body>
+</html>
