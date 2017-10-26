@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>New User - Admin</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'users/CSS/style.css' %}">               
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </head>
+    <body class="container">
+        {% include 'users/navbar.html' %}
+        <div class='row justify-content-center'>
+            <div class='col-md-6'>
+                <h1>Add a User</h1>
+                <form action='/users/newUser' method='POST'>
+                    {% csrf_token %}
+                    <div class='form-group'>
+                        {% include 'login_reg/error.html' with tag="first_name error" %}                        
+                        <input type="text" name="first_name" class="form-control" placeholder='First Name'>
+                    </div>
+                    <div class='form-group'>
+                        {% include 'login_reg/error.html' with tag="last_name error" %}                        
+                        <input type="text" name="last_name" class="form-control" placeholder='Last Name'>
+                    </div>
+                    <div class='form-group'>
+                        {% include 'login_reg/error.html' with tag='email error' %}                 
+                        <input type="email" name="email" class="form-control" placeholder='Email'>
+                    </div>
+                    <div class='form-group'>
+                        {% include 'login_reg/error.html' with tag='password error' %}                       
+                        <input type="password" name="password" class="form-control" placeholder='Password'>
+                    </div>
+                    <div class='form-group'>
+                        {% include 'login_reg/error.html' with tag='password_confirmation error' %}                        
+                        <input type="password" name="password_confirmation" class="form-control" placeholder='Password Confirmation'>
+                    </div>
+                    <Button type="submit" class="btn btn-primary">Add</Button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+    
