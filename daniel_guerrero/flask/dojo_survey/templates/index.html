@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title> Coding Dojo Survey!</title>
+    <link rel="stylesheet" type="text/css" href="static/index.css">
+</head>
+<body>
+  <div class="wrapper">
+          <div class="top">
+              <p>Dojo Survey Index</p>
+             <img src="static/arrows.png" class="leftarrow" />
+              <img src="static/arrow.png" class="rightarrow" />
+              <img src="static/ex.jpg" />
+              <img src="static/capture1.png" id="capture1" />
+              <img src="static/capture3.png" id="capture3" />
+              <img src="static/capture.png" id="capture" />
+          </div>
+          <div class="midcontainer">
+            <div class="midcontent">
+              <form action="/process" method="POST">
+                  <!-- Name  -->
+                   <label>Your Name :</label> 
+                   <input type="text" name="name" />
+                  <!-- Location  -->
+                 <label>Coding Dojo:</label>
+                <select name="location">
+                    <option value="Silicon">Silicon Valley</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Angeles">Los Angeles</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="Washington">Washington DC</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Tulsa">Tulsa</option>
+                </select>
+                 <!-- Language  -->
+                <label>Favorite Language:</label>
+                <select name="language">
+                    <option value="Python">Python</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Java">Java</option>
+                    <option value=".Net">.Net</option>
+                </select>
+               
+                 <!-- Comment  -->
+               <label>Comment (optional): </label>
+                  <div>
+                  <textarea name="comment" id="comment" style="font-family:sans-serif;font-size:1.2em;">
+                  </textarea>
+                 <!-- Sumbit  -->
+                  </div>
+                  <button type="submit">Submit</button>
+                  </form>
+
+            </div>
+          </div>
+
+
+      </div>
+</body>
+</html>
+
+
+
+

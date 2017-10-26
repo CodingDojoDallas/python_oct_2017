@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rock Paper Scissors</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">	
+</head>
+<body>
+	<form action="/">
+		<h3>You are logged in as: {{ name }} <button>Log Out</button></h3>
+	</form>
+	<div class="stats">
+		<p class="win">Wins: {{ wins }}</p>
+		<p class="lose">Losses: {{ losses }}</p>
+		<p>Ties: {{ ties }}</p>
+	</div>
+	<h1>Rock Paper Scissors</h1>
+	
+	<div id="message">
+	{% with messages = get_flashed_messages()%}
+		{% if messages %}
+			{% for message in messages %}
+				<p {% if message.find("Win") >0 %}
+					class="win"
+					{% endif %}
+					{% if message.find("Lose") >0 %}
+					class="lose"
+					{% endif %}>
+				{{ message }}
+				</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+	</div>
+	
+	<form action="/process" method="POST">
+		<h3>Choose Your Weapon:</h3>
+		<button id="rock" name="choice" value="0"><img src="{{url_for('static', filename='rock.jpg')}}" alt="Rock"></button>
+		<button id="paper" name="choice" value="1"><img src="{{url_for('static', filename='paper.jpg')}}" alt="Paper"></button>
+		<button id="scissors" name="choice" value="2"><img src="{{url_for('static', filename='scissors.jpg')}}" alt="Scissors"></button>
+	</form>
+</body>
+</html>

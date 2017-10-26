@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <title>Ninjas Found!</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            {% if session['myKey']=='hello' %}
+            <div>
+                <img src="{{url_for('static', filename='blue.jpg')}}">
+                <img src="{{url_for('static', filename='red.jpg')}}">
+                <img src="{{url_for('static', filename='purple.jpg')}}">
+                <img src="{{url_for('static', filename='orange.jpg')}}">
+            </div>
+            {% elif color == "blue" %}
+            <img src="{{ url_for('static', filename='blue.jpg') }}">
+            {% elif color == "red" %}
+            <img src="{{ url_for('static', filename='red.jpg') }}">
+            {% elif color == "orange" %}
+            <img src="{{ url_for('static', filename='orange.jpg') }}">
+            {% elif color == "purple" %}
+            <img src="{{ url_for('static', filename='purple.jpg') }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='notapril.jpg') }}">
+            {% endif %}
+        </div>
+    </body>
+</html>
+
+

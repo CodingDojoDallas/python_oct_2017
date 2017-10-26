@@ -1,0 +1,13 @@
+body
+{
+     height:600px;
+    width:800px;
+}
+.wrapper{
+    height:630px;
+    width:800px;
+    border:2px solid black;
+    background: linear-gradient(#FA9128, white,#FA9128);
+    background-color:#FA9128;
+    text-align: center;
+}
