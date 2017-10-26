@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Dojo Survey</title>
+    <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+    <body>
+        <div id="Info">
+            <div id="content">
+        <p id="Name">Your Name:</p>
+            <textarea id="text1">
+            </textarea>
+            <p></p>
+        <p id="location">Dojo Location:</p>
+            <Select id="selectloc">
+            <option value="San Jose">SanJose</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <opion value="Washington">Washington</opion>
+            <opton value="Chicago">Chicago</opton>
+            <option value="Berkley">Berkley</option>
+            <option value="Orange County">Orange County</option>
+        </Select>
+          
+            <p></p>
+        <p Id="lang">Favorite Language:</p>
+            <select id="selectlang">
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="Ruby">Ruby</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="CSS">CSS</option>
+            </select>
+        </p>
+        <p></p>
+        <p id="comment">
+        Comment (optional):
+        </p>
+        
+        <textarea id="text2"></textarea>
+        <p></p>
+        <Button id="button">Button
+        </Button>
+            </div>
+        </div>
+    </body>    
+</head>
+</html>
