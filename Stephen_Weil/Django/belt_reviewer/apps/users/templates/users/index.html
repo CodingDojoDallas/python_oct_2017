@@ -1,0 +1,68 @@
+{% extends 'users/base.html' %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<h1 id="title">Welcome!</h1>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="form">
+            <form action='/users/register' method='POST' class='register-form'>
+                {% csrf_token %}
+                <h1>Register</h1>
+                <p>Name: <input type="text" name="name" class="form-control"></p>
+                {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'namelen error' or message.tags == 'namechars error' %}
+                        <p class="error">{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Alias: <input type="text" name="alias" class="form-control"></p>
+                {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'aliaslen error' or message.tags == 'aliaschars error' %}
+                        <p class="error">{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Email: <input type="email" name="email" class="form-control"></p>
+                {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'email error' %}
+                        <p class="error">{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Password: <input type="password" name="pword" class="form-control"></p>
+                <p>*Password should be at least 8 characters</p>
+                <p>Confirm PW: <input type="password" name="conf" class="form-control"></p>
+                {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'pwlen error' or message.tags == 'pwconf error' %}
+                        <p class="error">{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+                <Button type="submit" class="btn btn-primary">Register</Button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class='form'>
+            <form action='/users/login' method='POST' class='login-form'>
+                {% csrf_token %}
+                <h1>Log In</h1>
+                <p>Email: <input type="text" name="email" class="form-control" placeholder='Email Address'></p>
+                <p>Password: <input type="password" name="pword" class="form-control" placeholder='Password'></p>
+                <Button type="submit" class="btn btn-primary">Login</Button>
+                {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'login error' %}
+                        <p class="error">{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

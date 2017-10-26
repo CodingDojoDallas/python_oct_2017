@@ -1,0 +1,37 @@
+{% extends 'users/base.html' %}
+{% block title %}Books Home{% endblock %}
+{% block content %}
+<div class="row justify-content-between headerband">
+    <div class="col-4"><h1>Welcome, {{user.alias}}!</h1></div>
+    <div class="col-3"><a href="/books/add">Add Book and Review</a> | <a href="/users/logout">Logout</a></div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Recent Book Reviews:</h3>
+        {% if reviews %}
+        {% for review in reviews %}
+        <div class="card">
+            <div class="card-header">
+              <a href="/books/show/{{review.book.id}}">{{review.book.title}}</a>
+            </div>
+            <div class="card-block">
+              <p class="card-text indent">Rating: {% for i in range %}{% load static %}{% if forloop.counter <= review.stars %}<img src="{% static 'books/fullstar.png' %}" class="star">{% else %}<img src="{% static 'books/emptystar.png' %}" class="star">{% endif %}{% endfor %}</p>
+              <p class="card-text indent"><a href="/users/show/{{review.reviewer.id}}">{{review.reviewer.alias}}</a> says: {{review.text}}</p>
+              <p class="card-text indent">Posted on: {{review.created_at}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        <h3>Other Books with Reviews:</h3>
+        <div class="reviews scroll">
+            {% if books %}
+            {% for book in books %}
+            <p><a href="/books/show/{{book.id}}">{{book.title}}</a></p>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

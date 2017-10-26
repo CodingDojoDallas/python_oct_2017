@@ -1,0 +1,45 @@
+p.error{
+    color: red;
+}
+h1#title{
+    border-bottom: 2px solid black;
+    margin-bottom: 40px;
+}
+div.row.headerband{
+    margin-bottom: 50px;
+}
+p.indent{
+    margin-left: 40px;
+}
+p.long{
+    width: 400px;
+}
+    p.long input{
+        width: 300px;
+    }
+textarea.review{
+    width: 400px;
+    height: 150px;
+}
+div.card-block{
+    padding: 10px;
+}
+div.card{
+    margin-bottom: 15px;
+}
+img.star{
+    width: 5%;
+    height: auto;
+}
+div.reviews{
+    border: 2px solid black;
+    padding: 10px;
+    height: 20em;
+}
+div.right{
+    text-align: right;
+}
+div.col-md-6.scroll{
+    overflow-y: scroll;
+    height: 30em;
+}

@@ -1,0 +1,17 @@
+{% extends 'users/base.html' %}
+{% block title %}{{user.alias}}'s Reviews{% endblock %}
+{% block content %}
+<div class="row justify-content-end headerband">
+    <div class="col-4 right"><a href="/books">Home</a> | <a href="/books/add">Add Book and Review</a> | <a href="/users/logout">Logout</a></div>
+</div>
+<h1>User Alias: {{user.alias}}</h1>
+<p>Name: {{user.name}}</p>
+<p>Email: {{user.email}}</p>
+<p>Total Reviews: {% if reviews %}{{reviews|length}}{% endif %}</p>
+<h3>Posted reviews on the following books:</h3>
+{% if books %}
+{% for book in books %}
+<p class="indent"><a href="/books/show/{{book.id}}">{{book.title}}</a></p>
+{% endfor %}
+{% endif %}
+{% endblock %}

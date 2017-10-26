@@ -1,0 +1,61 @@
+{% extends 'users/base.html' %}
+{% block title %}{{book.title}}{% endblock %}
+{% block content %}
+<div class="row justify-content-end headerband">
+    <div class="col-3 right"><a href="/books">Home</a> | <a href="/users/logout">Logout</a></div>
+</div>
+<h1>{{book.title}}</h1>
+<p>Author: {{book.author}}</p>
+<div class="row">
+    <div class="col-md-6"><h3>Reviews:</h3></div>
+    <div class="col-md-6"><h5>Add a review:</h5></div>
+</div>
+<div class="row">
+    <div class="col-md-6 scroll">
+        {% if reviews %}
+        {% for review in reviews %}
+        <div class="card">
+            <div class="card-block">
+              <p class="card-text indent">Rating: {% for i in range %}{% load static %}{% if forloop.counter <= review.stars %}<img src="{% static 'books/fullstar.png' %}" class="star">{% else %}<img src="{% static 'books/emptystar.png' %}" class="star">{% endif %}{% endfor %}</p>
+              <p class="card-text indent"><a href="/users/show/{{review.reviewer.id}}">{{review.reviewer.alias}}</a> says: {{review.text}}</p>
+              <p class="card-text indent">Posted on: {{review.created_at}}</p>
+              {% if request.session.id == review.reviewer.id %}
+              <p class="card-text indent"><a href="/books/review/delete/{{review.id}}">Delete This Review</a></p>
+              {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        <div class="form">
+            <form action="/books/{{book.id}}/reviews/add" method="post">
+                {% csrf_token %}
+                <p><textarea class="review" name="review"></textarea></p>
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "review error" %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <p>Rating: <select name="stars">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> Stars</p>
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "stars error" %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <Button type="submit" class="btn btn-primary">Submit Review</Button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

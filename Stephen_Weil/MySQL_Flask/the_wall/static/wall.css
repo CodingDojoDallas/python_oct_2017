@@ -1,0 +1,84 @@
+div.container{
+    background: url(wallbg.jpg) no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    color: white;
+    padding-bottom: 25px;
+}
+nav div.container{
+    background: transparent;
+    padding: 15px 0 0 0;
+}
+    nav div.container a{
+        color: white;
+    }
+nav h1{
+    display: inline-block;
+    margin-top: 0px;
+}
+nav{
+    border-bottom: 1px solid white;
+}
+h2{
+    margin-top: 25px;
+    font-size: 20px;
+}
+p{
+    margin-left: 25px;
+    border: 1px solid black;
+    padding: 10px;
+}
+h1{
+    margin-top: 50px;
+    font-size: 28px;
+}
+textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+form{
+    margin-bottom: 15px;
+}
+h3{
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+}
+div#posts{
+    padding-top: 40px;
+}
+div.comment{
+    margin-left: 100px;
+}
+    div.comment h2{
+        font-size: 14px;
+        font-weight: normal;
+    }
+    div.comment input[type='submit']{
+        background-color: green;
+        color: white;
+    }
+    div.comment p{
+        margin-left: 0;
+        overflow-wrap: break-word;
+    }
+form#poster input[type='submit']{
+    background-color: blue;
+    color: white;
+}
+div.post{
+    border: 1px solid white;
+    padding: 10px;
+    margin-top: 25px;
+}
+    div.post p{
+        background-color: white;
+        color: black;
+        border: none;
+        overflow-wrap: break-word;
+    }
+    div.post a{
+        color: red;
+        text-decoration: underline;
+    }

@@ -1,0 +1,100 @@
+body{
+    background: url(librarybg.jpg) no-repeat center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    color: white;
+}
+h1#header{
+    margin: auto;
+    width: 250px;
+    text-align: center;
+    color: white;
+}
+h3#title{
+    margin: auto;
+    width: 250px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+div.container{
+    padding: 50px;
+}
+table{
+    margin-top: 25px;
+    color: white;
+}
+    table a{
+        color: white;
+    }
+    table a:hover{
+        color: white;
+    }
+div.link{
+    margin: 25px auto;
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    background-color: blue;
+    border: 1px solid black;
+    box-shadow: 0 0 20px #000;
+    text-align: center;
+}
+div.red.link{
+    float: left;
+    background-color: red;
+}
+div.green.link{
+    float: right;
+    background-color: green;
+}
+div.red.link.center{
+    float: none;
+}
+div.link a{
+    color: white;
+}
+form{
+    width: 325px;
+    margin: 25px auto;
+    text-align: right;
+    color: white;
+}
+    form input[type='text']{
+        width: 250px;
+    }
+    form input[type='submit']{
+        background-color: blue;
+        border: 1px solid black;
+        box-shadow: 0 0 20px #000;
+        color: white;
+    }
+form#quote{
+    text-align: left;
+    width: 500px;
+}
+    form#quote textarea{
+        display: block;
+        width: 500px;
+    }
+    form#quote input[type='submit']{
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+p.flash{
+    color: red;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    background-color: black;
+}
+ul{
+    list-style-image: url('bookicon.png');
+}
+li.quote{
+    width: 600px;
+    margin: 25px auto;
+    color: white;
+}

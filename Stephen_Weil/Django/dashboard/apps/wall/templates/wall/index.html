@@ -1,0 +1,59 @@
+{% extends 'users/base.html' %}
+{% block title %}User Wall{% endblock %}
+{% block scripts %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'users/signin.css' %}">
+{% endblock %}
+{% block content %}
+<h1>{{user.first}} {{user.last}}</h1>
+<p>Registered at: {{user.created_at}}</p>
+<p>User ID: #{{user.id}}</p>
+<p>Email address: {{user.email}}</p>
+<p>Description: {{user.desc}}</p>
+{% if request.session.id == user.id %}
+<p><a href="/users/edit/{{user.id}}">Edit Profile</a></p>
+{% else %}
+<h3>Leave a Message for {{user.first}}</h3>
+<div class='form'>
+    <form action='/users/show/{{user.id}}/post' method='POST' class="post">
+        {% csrf_token %}
+        <textarea name="text"></textarea>
+        {% if messages %} 
+        {% for message in messages %} 
+        {% if message.tags == 'post error' %}
+        <p class="error">{{ message }}</p>
+        {% endif %} 
+        {% endfor %} 
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
+{% endif %}
+{% if posts %}
+<div id="posts">
+{% for post in posts %}
+    <div class="post">
+        <h6><a href="{{post.author.id}}">{{post.author.first}} {{post.author.last}}</a> - {{post.created_at}}</h6>
+        <p>{{post.text}}</p>
+    </div>
+    {% if replies %}
+    {% for reply in replies %}
+    {% if reply.message.id == post.id %}
+    <div class="reply">
+        <h6><a href="{{reply.author.id}}">{{reply.author.first}} {{reply.author.last}}</a> - {{reply.created_at}}</h6>
+        <p>{{reply.text}}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <div class="reply">
+        <form action="/users/show/{{user.id}}/{{post.id}}/reply" method="post" class="reply">
+            {% csrf_token %}
+            <textarea name="text" placeholder="Write a message"></textarea>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+    </div>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

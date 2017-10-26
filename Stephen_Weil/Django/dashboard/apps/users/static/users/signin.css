@@ -1,0 +1,37 @@
+form.register-form {
+    display: none;
+}
+form{
+    text-align: center;
+}
+form > *{
+    margin-bottom: 5px;
+}
+form.edit p{
+    text-align: left;
+}
+p.error{
+    color: red;
+}
+p.success{
+    color: green;
+}
+textarea{
+    width: 100%;
+}
+select{
+    display: block;
+}
+div.post{
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+}
+div.comment, div.reply{
+    border: 1px solid black;
+    margin: 10px 0 0 40px;
+    padding: 10px;
+}
+form.post, form.reply{
+    text-align: left;
+}
