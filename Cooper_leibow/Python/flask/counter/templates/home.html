@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>{{session['counter']}}
+        {% if session['counter']==1 %}
+            time
+        {% else %}
+            times
+        {% endif %}</p> 
+    <a href='/addtwo' name="Add two"><button> + 2</button></a>
+    <a href='/reset' name="reset"><button> reset this mofo</button></a>
+</body>
+</html>
